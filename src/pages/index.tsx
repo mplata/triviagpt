@@ -25,15 +25,8 @@ export default function Home() {
     setLoadingQuestion(false);
   };
 
-  const fetchCategories = async () => {
-    const categoriesResponse = await axios.get('/api/categories');
-    const categories:Category = categoriesResponse.data;
-    console.log(categories);
-  };
-
   useEffect(() => {
     fetchQuestion();
-    fetchCategories();
   }, []);
 
   const selectAnswer = (index: number, question: Answer) => {
